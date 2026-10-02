@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ecuador 2050: dos futuros posibles</title>
+
+    <!-- la fuente de los titulos, si no carga usa la del sistema -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <!-- css y js estan en la misma carpeta que este archivo -->
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <a class="saltar" href="#futuros">Ir al contenido</a>
+
+    <!-- barra de arriba -->
+    <header class="barra">
+        <div class="barra__interior contenedor">
+            <a class="barra__marca" href="#inicio">Ecuador 2050</a>
+            <button class="barra__boton" id="botonMenu" type="button" aria-expanded="false" aria-controls="menuPrincipal">Menú</button>
+            <nav class="barra__menu" id="menuPrincipal" aria-label="Secciones">
+                <a href="#inicio">Inicio</a>
+                <a href="#futuros">Dos futuros</a>
+                <a href="#decisiones">Decisiones</a>
+                <a href="#mejoras">Mejoras</a>
+                <a href="#fuentes">Fuentes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- portada con el titulo, el proposito y el grupo -->
+        <section class="portada" id="inicio">
+            <div class="aurora" aria-hidden="true">
+                <span class="aurora__mancha aurora__mancha--1"></span>
+                <span class="aurora__mancha aurora__mancha--2"></span>
+                <span class="aurora__mancha aurora__mancha--3"></span>
+            </div>
+
+            <div class="contenedor portada__contenido">
+                <p class="portada__curso">Realidad Nacional y Diversidad Cultural · Universidad Estatal de Bolívar</p>
+                <h1 class="portada__titulo" data-texto-animado>Ecuador 2050: dos futuros posibles</h1>
+                <p class="portada__proposito">
+                    Esta página cuenta cómo puede ser el Ecuador dentro de 24 años según las decisiones que tomemos hoy.
+                    Usamos las megatendencias de clima, digitalización, demografía y automatización para armar una historia
+                    favorable y una desfavorable. Después puedes tomar dos decisiones y ver qué pasa con cada una.
+                </p>
+
+                <div class="grupo">
+                    <p class="grupo__titulo">Grupo</p>
+                    <ul class="grupo__lista">
+                        <!-- aqui van los nombres reales del grupo -->
+                        <li>Integrante 1</li>
+                        <li>Integrante 2</li>
+                        <li>Integrante 3</li>
+                        <li>Integrante 4</li>
+                    </ul>
+                </div>
+
+                <div class="portada__botones">
+                    <a class="boton boton--brillo" href="#futuros">Ver los dos futuros</a>
+                    <a class="boton boton--vidrio" href="#decisiones">Ir a las decisiones</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- cinta que se mueve con las 4 megatendencias -->
+        <div class="cinta" aria-label="Megatendencias: clima, digitalización, demografía y automatización">
+            <div class="cinta__pista" id="cintaPista">
+                <span>Cambio climático</span>
+                <span>Transformación digital</span>
+                <span>Cambios demográficos</span>
+                <span>Automatización e IA</span>
+                <span>Desarrollo sostenible</span>
+                <span>Escenarios al 2050</span>
+            </div>
+        </div>
+
+        <!-- datos de las fuerzas que ya estan en marcha -->
+        <section class="seccion" id="fuerzas">
+            <div class="contenedor">
+                <h2 class="seccion__titulo revelar">Las fuerzas que ya están en marcha</h2>
+                <p class="seccion__intro revelar">Estos datos salen de la clase y son la base de los dos relatos que vienen después.</p>
+
+                <div class="rejilla rejilla--cuatro">
+                    <article class="tarjeta revelar">
+                        <p class="dato__numero"><span class="contador" data-valor="35.4" data-decimales="1">0</span>%</p>
+                        <p class="dato__texto">de superficie glaciar perdida en Bolívar (clima)</p>
+                    </article>
+                    <article class="tarjeta revelar">
+                        <p class="dato__numero"><span class="contador" data-valor="14">0</span> h</p>
+                        <p class="dato__texto">de apagones al día en 2024 (clima y energía)</p>
+                    </article>
+                    <article class="tarjeta revelar">
+                        <p class="dato__numero"><span class="contador" data-valor="2200">0</span> M</p>
+                        <p class="dato__texto">de personas sin conexión en el mundo (digitalización)</p>
+                    </article>
+                    <article class="tarjeta revelar">
+                        <p class="dato__numero"><span class="contador" data-valor="46">0</span></p>
+                        <p class="dato__texto">adultos mayores por cada 100 niños en Bolívar (demografía)</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- los dos futuros -->
+        <section class="seccion" id="futuros">
+            <div class="contenedor">
+                <h2 class="seccion__titulo revelar">Dos futuros para el Ecuador</h2>
+                <p class="seccion__intro revelar">
+                    Los dos relatos parten de las mismas tendencias de hoy. Lo que cambia es lo que hacemos con ellas.
+                    Son escenarios hipotéticos con fines didácticos, no pronósticos garantizados.
+                </p>
+
+                <!-- pestañas con el indicador que se desliza -->
+                <div class="pestanias" id="pestanias" role="tablist" aria-label="Elegir futuro" data-activa="favorable">
+                    <span class="pestanias__indicador" id="indicador" aria-hidden="true"></span>
+                    <button class="pestania" id="tab-favorable" type="button" role="tab" aria-selected="true" aria-controls="panel-favorable" data-futuro="favorable">Futuro favorable</button>
+                    <button class="pestania" id="tab-desfavorable" type="button" role="tab" aria-selected="false" aria-controls="panel-desfavorable" data-futuro="desfavorable" tabindex="-1">Futuro desfavorable</button>
+                </div>
+
+                <!-- futuro favorable -->
+                <article class="panel panel--favorable" id="panel-favorable" role="tabpanel" aria-labelledby="tab-favorable">
+                    <h3 class="panel__titulo">Un Ecuador que se adaptó a tiempo</h3>
+                    <p class="panel__tendencias">Megatendencias que lo explican: cambio climático, transformación digital y automatización.</p>
+                    <p class="panel__resumen">
+                        En 2050 una estudiante de software de Guaranda trabaja desde su casa para empresas de Quito y de Madrid.
+                        La conexión es estable en todo el país y la energía limpia evita los cortes largos.
+                    </p>
+
+                    <div class="rejilla rejilla--dos">
+                        <div class="tarjeta">
+                            <h4>Empleo</h4>
+                            <p>La inteligencia artificial se encarga de las tareas repetitivas y las personas se forman todo el tiempo para hacer trabajos de más valor. Los desarrolladores locales crean apps para el campo, como sistemas de riego en los páramos de Salinas y Simiátug.</p>
+                        </div>
+                        <div class="tarjeta">
+                            <h4>Educación</h4>
+                            <p>Los colegios y las universidades tienen internet de calidad, también en las zonas rurales. La formación continua es normal y los profesionales enseñan programación a los adultos mayores por las tardes.</p>
+                        </div>
+                        <div class="tarjeta">
+                            <h4>Ambiente</h4>
+                            <p>La energía limpia mixta evita los estiajes graves. Las apps se programan para gastar poca energía y los equipos viejos se siguen usando más años, así se genera menos basura electrónica.</p>
+                        </div>
+                        <div class="tarjeta">
+                            <h4>Vida cotidiana</h4>
+                            <p>Los jóvenes encuentran oportunidades en su propia provincia y se quedan. Los adultos mayores tienen interfaces con letras grandes, voz y telemedicina para cuidarse en casa.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- futuro desfavorable, empieza escondido -->
+                <article class="panel panel--desfavorable" id="panel-desfavorable" role="tabpanel" aria-labelledby="tab-desfavorable" hidden>
+                    <h3 class="panel__titulo">Un Ecuador que llegó tarde</h3>
+                    <p class="panel__tendencias">Megatendencias que lo explican: cambio climático, demografía y transformación digital.</p>
+                    <p class="panel__resumen">
+                        En 2050 la misma estudiante tuvo que irse a Quito porque en Guaranda no hay internet confiable.
+                        Sus papás viven en un pueblo donde casi no quedan jóvenes.
+                    </p>
+
+                    <div class="rejilla rejilla--dos">
+                        <div class="tarjeta">
+                            <h4>Empleo</h4>
+                            <p>La tecnología avanza más rápido que la formación y muchos puestos de soporte técnico los hace una IA. Mucha gente sobrevive en la economía de plataformas, entregando pedidos y sin seguro.</p>
+                        </div>
+                        <div class="tarjeta">
+                            <h4>Educación</h4>
+                            <p>Los niños del campo no tienen conexión para sus clases. La brecha ya no es tener o no tener internet sino la calidad de la conexión, y eso separa lo urbano de lo rural.</p>
+                        </div>
+                        <div class="tarjeta">
+                            <h4>Ambiente</h4>
+                            <p>Sin el glaciar del Chimborazo hay sequías severas y racionamiento de agua. Los apagones programados son parte de la rutina y las empresas tienen protocolos sin luz.</p>
+                        </div>
+                        <div class="tarjeta">
+                            <h4>Vida cotidiana</h4>
+                            <p>La provincia está envejecida y los jóvenes migran. Algunos pueblos quedan casi abandonados y los datos de la gente dependen de plataformas extranjeras que nadie de aquí controla.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- las dos decisiones interactivas -->
+        <section class="seccion" id="decisiones">
+            <div class="contenedor">
+                <h2 class="seccion__titulo revelar">Tus decisiones</h2>
+                <p class="seccion__intro revelar">
+                    Imagina que eres quien desarrolla software en Guaranda. Elige una opción en cada decisión
+                    y mira qué consecuencia tiene para el Ecuador de 2050.
+                </p>
+
+                <div class="decisiones">
+                    <!-- decision 1 -->
+                    <section class="decision tarjeta revelar" aria-labelledby="titulo-decision1">
+                        <h3 id="titulo-decision1">Decisión 1: una app para una cooperativa</h3>
+                        <p class="decision__pregunta">Tu app nueva solo funciona con conexión permanente y equipos recientes. ¿Qué haces?</p>
+                        <div class="opciones">
+                            <button class="opcion" type="button" data-decision="1" data-eleccion="a" aria-pressed="false">
+                                Hacerla ligera y que funcione sin conexión (offline-first)
+                            </button>
+                            <button class="opcion" type="button" data-decision="1" data-eleccion="b" aria-pressed="false">
+                                Dejarla pesada y pedir que los usuarios cambien de equipo
+                            </button>
+                        </div>
+                        <div class="consecuencia" id="consecuencia1" aria-live="polite"></div>
+                    </section>
+
+                    <!-- decision 2 -->
+                    <section class="decision tarjeta revelar" aria-labelledby="titulo-decision2">
+                        <h3 id="titulo-decision2">Decisión 2: automatizar la atención al cliente</h3>
+                        <p class="decision__pregunta">La cooperativa te pide automatizar la atención y algunas personas que hablan kichwa podrían quedar desplazadas. ¿Qué haces?</p>
+                        <div class="opciones">
+                            <button class="opcion" type="button" data-decision="2" data-eleccion="a" aria-pressed="false">
+                                Diseñar una solución mixta e inclusiva, con apoyo en kichwa
+                            </button>
+                            <button class="opcion" type="button" data-decision="2" data-eleccion="b" aria-pressed="false">
+                                Implementarla sin preguntar a nadie
+                            </button>
+                        </div>
+                        <div class="consecuencia" id="consecuencia2" aria-live="polite"></div>
+                    </section>
+                </div>
+
+                <!-- resultado, sale cuando se responden las dos -->
+                <div class="resultado" id="resultado" hidden aria-live="polite">
+                    <h3 id="resultadoTitulo"></h3>
+                    <p id="resultadoTexto"></p>
+                    <button class="boton boton--vidrio" id="botonReiniciar" type="button">Volver a decidir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- mejoras despues de la prueba de usuarios -->
+        <section class="seccion" id="mejoras">
+            <div class="contenedor">
+                <h2 class="seccion__titulo revelar">Así mejoramos la propuesta</h2>
+                <p class="seccion__intro revelar">
+                    Otro grupo probó la página sin que le explicáramos nada. Anotamos lo que vimos y cambiamos lo que hacía falta.
+                    Cada fila sigue el orden: observación recibida, decisión del equipo, cambio aplicado y resultado al volver a probar.
+                </p>
+
+                <div class="tabla-caja revelar">
+                    <table class="tabla">
+                        <caption>Registro de la prueba de usuarios</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Tipo</th>
+                                <th scope="col">Observación recibida</th>
+                                <th scope="col">Decisión del equipo</th>
+                                <th scope="col">Cambio aplicado</th>
+                                <th scope="col">Resultado de la nueva prueba</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- falta llenar esta fila con lo que pase en la prueba -->
+                            <tr>
+                                <th scope="row">Claridad del contenido</th>
+                                <td>Completar con lo que dijo o hizo el otro grupo.</td>
+                                <td>Completar: se aplica o se descarta, y por qué.</td>
+                                <td>Completar con el cambio hecho en la página.</td>
+                                <td>Completar con lo que pasó al probar otra vez.</td>
+                            </tr>
+                            <!-- esta tambien -->
+                            <tr>
+                                <th scope="row">Navegación o interacción</th>
+                                <td>Completar con lo que dijo o hizo el otro grupo.</td>
+                                <td>Completar: se aplica o se descarta, y por qué.</td>
+                                <td>Completar con el cambio hecho en la página.</td>
+                                <td>Completar con lo que pasó al probar otra vez.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- capturas del antes y el despues, se puede subir la imagen para verla aqui -->
+                <div class="rejilla rejilla--dos capturas">
+                    <figure class="captura revelar">
+                        <label class="captura__espacio" for="capturaAntes">
+                            <span class="captura__texto">Subir captura de la versión inicial</span>
+                            <img class="captura__imagen" id="imagenAntes" alt="Captura de la versión inicial de la página" hidden>
+                        </label>
+                        <input class="captura__entrada" id="capturaAntes" type="file" accept="image/*" data-destino="imagenAntes">
+                        <figcaption>Antes de la prueba</figcaption>
+                    </figure>
+                    <figure class="captura revelar">
+                        <label class="captura__espacio" for="capturaDespues">
+                            <span class="captura__texto">Subir captura de la versión mejorada</span>
+                            <img class="captura__imagen" id="imagenDespues" alt="Captura de la versión mejorada de la página" hidden>
+                        </label>
+                        <input class="captura__entrada" id="capturaDespues" type="file" accept="image/*" data-destino="imagenDespues">
+                        <figcaption>Después de aplicar la mejora</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- fuentes y creditos -->
+        <section class="seccion" id="fuentes">
+            <div class="contenedor">
+                <h2 class="seccion__titulo revelar">Fuentes y créditos</h2>
+
+                <div class="rejilla rejilla--dos">
+                    <div class="tarjeta revelar">
+                        <h3>Fuentes consultadas</h3>
+                        <ul class="lista">
+                            <li>Godet, M. y Durance, P. (2011). La prospectiva estratégica para las empresas y los territorios.</li>
+                            <li>CEPAL (2014). Prospectiva y políticas públicas para el Estado en América Latina.</li>
+                            <li>Voros, J. (2003). A generic foresight process framework. Foresight, 5(3), 10-21.</li>
+                            <li>Organización Meteorológica Mundial, OMM (2026).</li>
+                            <li>MapBiomas (2025).</li>
+                            <li>ONU-DESA (2024).</li>
+                            <li>INEC (2022). Censo de Población y Vivienda.</li>
+                            <li>Unión Internacional de Telecomunicaciones, UIT (2025).</li>
+                            <li>Foro Económico Mundial, FEM (2025).</li>
+                        </ul>
+
+                        <h3>Recursos utilizados</h3>
+                        <ul class="lista">
+                            <li>Clase del Tema 7: Tendencias y escenarios futuros del desarrollo sostenible, docente Juan Pablo Torres Cadena.</li>
+                            <li>HTML, CSS y JavaScript escritos por el grupo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="tarjeta revelar">
+                        <h3>Aportes de cada integrante</h3>
+                        <ul class="lista">
+                            <!-- cambiar por lo que hizo cada uno -->
+                            <li><strong>Integrante 1:</strong> investigación de las megatendencias.</li>
+                            <li><strong>Integrante 2:</strong> guion de los dos futuros.</li>
+                            <li><strong>Integrante 3:</strong> diseño y estilos de la página.</li>
+                            <li><strong>Integrante 4:</strong> programación de las decisiones y revisión.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Ecuador 2050: dos futuros posibles. Trabajo de clase de la Universidad Estatal de Bolívar. Los escenarios son hipotéticos y con fines didácticos.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
